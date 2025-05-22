@@ -23,8 +23,8 @@ const SignIn = async (props: {
     callbackUrl: string;
   }>;
 }) => {
-  const { callbackUrl } = await props.searchParams;
   const session = await auth();
+  const { callbackUrl } = await props.searchParams;
 
   if (session) {
     return redirect(callbackUrl || "/");
